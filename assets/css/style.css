@@ -1,0 +1,77 @@
+:root {
+    --background: rgb(0, 18, 44);
+    --grey: rgb(101, 110, 126);
+    --green: rgb(47, 255, 81);
+    --blue: rgb(55, 0, 255);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: var(--background);
+    color: white;
+}
+
+.choix_niveau {
+    display: inline-block;
+}
+
+.niveau {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    background-color: #fff;
+}
+
+.niveau input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.niveau input[type="radio"]:checked + label {
+    background-color: #f2f2f2;
+}
+
+.verticalement_et_horizontalement_centre {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.grille {
+    margin: 0 auto;
+}
+
+.case {
+    width: min(4.5vw, 4.5vh);
+    height: min(4.5vw, 4.5vh);
+    background-color: var(--grey);
+    text-align: center;
+    font-weight: bold;
+}
+
+.case_cliquee {
+    background-color: var(--green);
+}
+
+.case_drapeau {
+    background-color: var(--blue);
+}
+
+.statistiques {
+    position: absolute;
+    left: min(1vw, 1vh);
+    bottom: min(1vw, 1vh);
+    font-size: x-large;
+}
