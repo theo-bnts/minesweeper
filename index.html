@@ -12,18 +12,21 @@
 <body>
     <form action="jeu.html" method="get">
         <div class="choix_niveau">
-            <div class="niveau">
-                <input type="radio" name="difficulte" value="debutant">Débutant
+            <div class="choix_niveau_boutons">
+                <div class="bouton_niveau">
+                    <input id="debutant" type="radio" name="difficulte" value="debutant" checked>
+                    <label for="debutant">Débutant</label>
+                </div>
+                <div class="bouton_niveau">
+                    <input id="intermediaire" type="radio" name="difficulte" value="intermediaire">
+                    <label for="intermediaire">Intermédiaire</label>
+                </div>
+                <div class="bouton_niveau">
+                    <input id="expert" type="radio" name="difficulte" value="expert">
+                    <label for="expert">Expert</label>
+                </div>
             </div>
-            <div class="niveau">
-                <input type="radio" name="difficulte" value="intermediaire">Intermédiaire
-            </div>
-            <div class="niveau">
-                <input type="radio" name="difficulte" value="expert">Expert
-            </div>
-            <div class="composant_bouton">
-                <input class="bouton_confirmation" type="submit" value="Jouer">
-            </div>
+            <input class="bouton_jouer" type="submit" value="Jouer">
         </div>
     </form>
 </body>
