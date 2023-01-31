@@ -227,6 +227,47 @@ function nombre_drapeaux_places()
     return nombre_drapeaux;
 }
 
+/// IA ///
+
+function ia()
+{
+    let case_decouverte = false;
+
+    for (let x = 0; x < largeur; x++)
+    {
+        for (let y = 0; y < hauteur; y++)
+        {
+            if (matrice_cases_cliques[x][y] === 0)
+            {
+                for (let i = -1; i <= 1; i++)
+                {
+                    for (let j = -1; j <= 1; j++)
+                    {
+                        if (
+                            case_decouverte === false
+                            && (i !== 0 || j !== 0)
+                            && x + i >= 0 && x + i < largeur && y + j >= 0 && y + j < hauteur
+                        )
+                        {
+                            if (matrice_cases_cliques[x + i][y + j] === 1 && matrice_nombre_voisins[x + i][y + j] === 0)
+                            {
+                                case_decouverte = true;
+
+                                clic_case(x, y, "gauche");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (case_decouverte === false)
+    {
+        alert("Aucune case à proximité d’une case découverte dont le nombre de mines voisines est égal à 0 !");
+    }
+}
+
 /// AFFICHAGE ///
 
 function affiche_matrices()
@@ -238,11 +279,11 @@ function affiche_matrices()
         grille.removeChild(grille.firstChild);
     }
 
-    for (let x = 0; x < largeur; x++)
+    for (let y = 0; y < largeur; y++)
     {
         let ligne = document.createElement("tr");
 
-        for (let y = 0; y < hauteur; y++)
+        for (let x = 0; x < hauteur; x++)
         {
             let case_ = document.createElement("td");
 
@@ -273,6 +314,9 @@ function affiche_matrices()
 
     let nombre_mines = document.getElementById("nombre_mines");
     nombre_mines.innerHTML = nb_mines;
+
+    let nombre_drapeaux = document.getElementById("nombre_drapeaux");
+    nombre_drapeaux.innerHTML = nombre_drapeaux_places();
 
     let nombre_cases_non_minees_restantes_ = document.getElementById("nombre_cases_non_minees_restantes");
     nombre_cases_non_minees_restantes_.innerHTML = nombre_cases_non_minees_restantes();
