@@ -67,6 +67,7 @@ body {
     border-radius: 2.5vw;
     background-color: var(--purple);
     text-align: center;
+    cursor: pointer;
 }
 
 .grille {
@@ -99,6 +100,7 @@ body {
     background-color: var(--purple);
     text-align: center;
     border-radius: 2.5vh;
+    cursor: pointer;
 }
 
 .statistiques {
