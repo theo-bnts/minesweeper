@@ -2,7 +2,7 @@
 
 Il s'agit d'un projet réalisé dans le cadre de ma licence professionnelle à l'IUT d'Amiens, pour un cours intitulé "Analyse".
 
-Avant tout, l'objectif de ce projet était de produire une analyse afin de simplifier le développement de ce projet. Celle-ci nous a alors servi à produire le code.
+Avant tout, l'objectif de ce projet était de produire une analyse afin de simplifier le développement. Celle-ci nous a alors servi à produire le code.
 
 Ce projet visait à programmer un démineur avec un cahier des charges particulier : une intelligence artificielle basique devait, par exemple, être implémentée.
 
